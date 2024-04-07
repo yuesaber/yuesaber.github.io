@@ -11,7 +11,7 @@ body {
     font-family: Arial, sans-serif;
     margin: 0;
     padding: 0;
-    background-color: #333;
+    background: linear-gradient(to right, #241A11, #382E20, #4F4130); 
 }
 /* Logo Styles */
 .logo img {
@@ -28,8 +28,7 @@ body {
 
 /* Header Styles */
 header {
-    background: #333;
-    color: #fff;
+    background: linear-gradient(to right, #241A11, #382E20, #4F4130); 
     padding: 10px 0;
     height: 17vh; 
 }
@@ -44,7 +43,7 @@ header nav ul li {
 }
 
 header nav ul li a {
-    color: #fff;
+    color: #ffffff;
     text-decoration: none;
 }
 
@@ -71,14 +70,14 @@ nav ul li {
 nav ul li a {
     color: #fff;
     text-decoration: none;
-    font-size: 20px; /* Make the font size bigger */
+    font-size: 25px; /* Make the font size bigger */
     transition: transform 0.3s, color 0.3s, font-size 0.3s cubic-bezier(0.25, 0.46, 0.45, 0.94);
 }
 
 nav ul li:hover a {
     color: #ff5733; 
     transform: scale(1.5);
-    font-size: x-large; 
+    font-size: xx-large; 
 }
 
 
@@ -86,29 +85,29 @@ nav ul li:hover ~ li {
     transform: translateX(100px);
 }
 
-
-/* Hero Section Styles */
 /* Hero Section Styles */
 #hero {
     background: url('../../assets/background.png') center/cover no-repeat; 
     color: #fff;
     padding: 100px 0;
     text-align: center;
-    height: 45vh; 
+    height: 80vh; 
     position: relative;
     overflow: hidden;
 }
 
 #hero h2 {
-    font-size: 36px;
-    animation: moveText 5s linear infinite alternate; 
+    font-size: 50px;
+    animation: moveText 4s cubic-bezier(0.25, 0.1, 0.25, 1) infinite alternate; 
 }
 
 /* Define the animation */
 @keyframes moveText {
     0% { transform: translateY(0); }
+    50% { transform: translateY(10px); } 
     100% { transform: translateY(20px); }
 }
+
 
 .parallax {
     background-attachment: fixed; 
@@ -135,32 +134,39 @@ nav ul li:hover ~ li {
     background: #ff8c66;
 }
 
-/* sections */
+/* Sections */
 section {
     padding: 100px 0;
     text-align: center;
     position: relative;
+    background-attachment: fixed; 
+    background-size: cover; 
+    background-position: center; 
 }
-
 
 #about {
-    background-color: #f2f2f2;
-    color: #333;
+    background-color: white;
+    color: white;
+    background-image: url('../../assets/b2.png');
+    font-size: x-large;
 }
 
-
 #expertise {
-    background-color: #d9d9d9;
-    color: #333;
+    background-color: var(--background-color); 
+    color: whitesmoke;
+    background-image: url('../../assets/b2.png'); 
+    font-size: x-large;
 }
 
 /* Footer Styles */
 footer {
-    background: #333;
-    color: #fff;
+    background: linear-gradient(to right, #241A11, #382E20, #4F4130); 
+    color: #fff; 
     padding: 20px 0;
     text-align: center;
 }
+
+
 
 /* CSS for animation effect on expertise icons */
 .expertise-icons img {
