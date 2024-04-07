@@ -11,12 +11,13 @@ body {
     font-family: Arial, sans-serif;
     margin: 0;
     padding: 0;
+    background-color: #333;
 }
 /* Logo Styles */
 .logo img {
     border-radius: 50%; 
-    width: 50px; 
-    height: 50px;  
+    width: 150px; 
+    height: 150px;  
 }
 
 .container {
@@ -29,7 +30,8 @@ body {
 header {
     background: #333;
     color: #fff;
-    padding: 20px 0;
+    padding: 10px 0;
+    height: 17vh; 
 }
 
 header nav ul {
@@ -45,12 +47,13 @@ header nav ul li a {
     color: #fff;
     text-decoration: none;
 }
+
 /* Navigation Styles */
 nav {
-    position: absolute; /* Fix the position */
-    top: 50%; /* Position it vertically at 50% from the top */
-    transform: translateY(-50%); /* Center it vertically */
-    right: 20px; /* Adjust the distance from the right side */
+    position: absolute; 
+    top: 50%; 
+    transform: translateY(-50%); 
+    right: 20px; 
 }
 
 nav ul {
@@ -62,21 +65,49 @@ nav ul {
 nav ul li {
     display: inline;
     margin-right: 20px;
+    transition: transform 0.3s; 
 }
 
 nav ul li a {
     color: #fff;
     text-decoration: none;
+    font-size: 20px; /* Make the font size bigger */
+    transition: transform 0.3s, color 0.3s, font-size 0.3s cubic-bezier(0.25, 0.46, 0.45, 0.94);
 }
 
+nav ul li:hover a {
+    color: #ff5733; 
+    transform: scale(1.5);
+    font-size: x-large; 
+}
+
+
+nav ul li:hover ~ li {
+    transform: translateX(100px);
+}
+
+
+/* Hero Section Styles */
 /* Hero Section Styles */
 #hero {
-    background: url('../../assets/erza.jpg') center/cover no-repeat; 
+    background: url('../../assets/background.png') center/cover no-repeat; 
     color: #fff;
     padding: 100px 0;
     text-align: center;
     height: 69vh; 
     position: relative;
+    overflow: hidden;
+}
+
+#hero h2 {
+    font-size: 36px;
+    animation: moveText 5s linear infinite alternate; 
+}
+
+/* Define the animation */
+@keyframes moveText {
+    0% { transform: translateY(0); }
+    100% { transform: translateY(20px); }
 }
 
 .parallax {
@@ -89,14 +120,11 @@ nav ul li a {
     position: relative;
 }
 
-#hero h2 {
-    font-size: 36px;
-}
 
 /* Button Styles */
 .btn {
     display: inline-block;
-    background: #ff5733;
+    background: #ff0000;
     color: #fff;
     padding: 10px 20px;
     text-decoration: none;
@@ -107,18 +135,23 @@ nav ul li a {
     background: #ff8c66;
 }
 
-/* Other Sections Styles (About, Services, Portfolio, Contact) */
+/* sections */
 section {
     padding: 100px 0;
     text-align: center;
+    position: relative;
 }
 
-section h2 {
-    font-size: 32px;
+
+#about {
+    background-color: #f2f2f2;
+    color: #333;
 }
 
-section p {
-    font-size: 18px;
+
+#portfolio {
+    background-color: #d9d9d9;
+    color: #333;
 }
 
 /* Footer Styles */
@@ -128,3 +161,5 @@ footer {
     padding: 20px 0;
     text-align: center;
 }
+
+
