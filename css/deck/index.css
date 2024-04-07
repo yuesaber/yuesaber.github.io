@@ -99,14 +99,48 @@ nav ul li:hover ~ li {
 #hero h2 {
     font-size: 50px;
     animation: moveText 4s cubic-bezier(0.25, 0.1, 0.25, 1) infinite alternate; 
+ }
+
+ .right-image {
+    position: absolute;
+    top: 50%;
+    right: -100px; /* Initially position it outside the section */
+    transform: translateY(-50%);
 }
 
-/* Define the animation */
-@keyframes moveText {
-    0% { transform: translateY(0); }
-    50% { transform: translateY(10px); } 
-    100% { transform: translateY(20px); }
+.animate-image {
+    animation: slideIn 0.5s forwards;
 }
+
+@keyframes slideIn {
+    from {
+        right: -100px; /* Initial position outside the section */
+    }
+    to {
+        right: 20px; /* Final position */
+    }
+}
+
+.left-image {
+    position: absolute;
+    top: 100%;
+    left: -100px; /* Initially position it outside the section */
+    transform: translateY(-50%);
+}
+
+.animate-left-image {
+    animation: slideInLeft 0.5s forwards;
+}
+
+@keyframes slideInLeft {
+    from {
+        left: -100px; /* Initial position outside the section */
+    }
+    to {
+        left: 20px; /* Final position */
+    }
+}
+
 
 
 .parallax {
