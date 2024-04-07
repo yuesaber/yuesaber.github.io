@@ -1,0 +1,130 @@
+/* Import Google Font Poppins */
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap');
+
+/* Apply Poppins font to all elements */
+body, header, nav, section, footer {
+    font-family: 'Poppins', sans-serif;
+}
+
+/* Basic Styles */
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+}
+/* Logo Styles */
+.logo img {
+    border-radius: 50%; 
+    width: 50px; 
+    height: 50px;  
+}
+
+.container {
+    width: 80%;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+/* Header Styles */
+header {
+    background: #333;
+    color: #fff;
+    padding: 20px 0;
+}
+
+header nav ul {
+    list-style: none;
+}
+
+header nav ul li {
+    display: inline;
+    margin-right: 20px;
+}
+
+header nav ul li a {
+    color: #fff;
+    text-decoration: none;
+}
+/* Navigation Styles */
+nav {
+    position: absolute; /* Fix the position */
+    top: 50%; /* Position it vertically at 50% from the top */
+    transform: translateY(-50%); /* Center it vertically */
+    right: 20px; /* Adjust the distance from the right side */
+}
+
+nav ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+nav ul li {
+    display: inline;
+    margin-right: 20px;
+}
+
+nav ul li a {
+    color: #fff;
+    text-decoration: none;
+}
+
+/* Hero Section Styles */
+#hero {
+    background: url('../../assets/erza.jpg') center/cover no-repeat; 
+    color: #fff;
+    padding: 100px 0;
+    text-align: center;
+    height: 69vh; 
+    position: relative;
+}
+
+.parallax {
+    background-attachment: fixed; 
+    background-position: center;
+    background-size: cover;
+}
+
+.container {
+    position: relative;
+}
+
+#hero h2 {
+    font-size: 36px;
+}
+
+/* Button Styles */
+.btn {
+    display: inline-block;
+    background: #ff5733;
+    color: #fff;
+    padding: 10px 20px;
+    text-decoration: none;
+    border-radius: 5px;
+}
+
+.btn:hover {
+    background: #ff8c66;
+}
+
+/* Other Sections Styles (About, Services, Portfolio, Contact) */
+section {
+    padding: 100px 0;
+    text-align: center;
+}
+
+section h2 {
+    font-size: 32px;
+}
+
+section p {
+    font-size: 18px;
+}
+
+/* Footer Styles */
+footer {
+    background: #333;
+    color: #fff;
+    padding: 20px 0;
+    text-align: center;
+}
