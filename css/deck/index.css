@@ -94,7 +94,7 @@ nav ul li:hover ~ li {
     color: #fff;
     padding: 100px 0;
     text-align: center;
-    height: 69vh; 
+    height: 45vh; 
     position: relative;
     overflow: hidden;
 }
@@ -162,4 +162,25 @@ footer {
     text-align: center;
 }
 
+/* CSS for animation effect on expertise icons */
+.expertise-icons img {
+    margin-right: 10px; 
+    opacity: 0;
+    transform: translateY(50px);
+}
+
+.animate-icon {
+    animation: slideIn 0.5s ease-in-out forwards;
+}
+
+@keyframes slideIn {
+    from {
+        opacity: 0;
+        transform: translateY(50px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
 
