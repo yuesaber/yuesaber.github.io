@@ -6,6 +6,7 @@
     <title>yueAkedo</title>
     <link rel="stylesheet" href="css/deck/index.css">
     <link rel="icon" type="image/png" href="assets/tab.jpg">
+    <link rel="stylesheet" href="css/deck/loader.css">
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
     <style>
         /* Additional CSS for typing animation */
@@ -27,44 +28,63 @@
             from, to { border-color: transparent }
             50% { border-color: rgb(255, 255, 255) }
         }
+
+        /* Centering loader */
+        .loader-container {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+        }
+
+        /* Hide main content by default */
+        .main-content {
+            display: none;
+        }
     </style>
 </head>
 <body>
+<!-- Loader Section -->
+<div class="loader-container">
+    <div class="lds-ellipsis"><div></div><div></div><div></div><div></div></div>
+</div>
 
-<!-- Header Section -->
-<header>
-    <div class="container">
-        <div class="logo">
-            <img src="assets/icon.jpg" alt="Your Logo">
+<!-- Main Content Section -->
+<div class="main-content">
+    <!-- Header Section -->
+    <header>
+        <div class="container">
+            <div class="logo">
+                <img src="assets/icon.jpg" alt="Your Logo">
+            </div>
+            <nav>
+                <ul>
+                    <li><a href="#hero">Home</a></li>
+                    <li><a href="#about">About</a></li>
+                    <li><a href="#expertise">Expertise</a></li>
+                    <li><a href="">Portfolio</a></li>
+                </ul>
+            </nav>
         </div>
-        <nav>
-            <ul>
-                <li><a href="#hero">Home</a></li>
-                <li><a href="#about">About</a></li>
-                <li><a href="#expertise">Expertise</a></li>
-                <li><a href="">Portfolio</a></li>
-            </ul>
-        </nav>
-    </div>
-</header>
+    </header>
 
-<!-- Hero Section -->
-<section id="hero" class="parallax">
-    <div class="container">
-        <h2>Welcome to My Website</h2>
-        <a href="sources/./login" class="btn">CONTACT</a> 
-    </div>
-</section>
+    <!-- Hero Section -->
+    <section id="hero" class="parallax">
+        <div class="container">
+            <h2>Welcome to My Website</h2>
+            <a href="index/./login" class="btn">CONTACT</a> 
+        </div>
+    </section>
 
-<!-- About Section -->
-<section id="about" class="parallax">
-    <div class="container">
-        <h2>About Me</h2>
-        <p id="aboutText"><span id="response"></span></p>
-    </div>
-</section>
+    <!-- About Section -->
+    <section id="about" class="parallax">
+        <div class="container">
+            <h2>About Me</h2>
+            <p id="aboutText"><span id="response"></span></p>
+        </div>
+    </section>
 
-<!-- Portfolio Section -->
+   <!-- Portfolio Section -->
 <section id="expertise" class="parallax">
     <div class="container">
         <h2>Knowledge & Preference</h2>
@@ -83,13 +103,13 @@
     </div>
 </section>
 
-
-<!-- Footer Section -->
-<footer>
-    <div class="container">
-        <p>&copy; 2024 yueAkedo. All rights reserved.</p>
-    </div>
-</footer>
+    <!-- Footer Section -->
+    <footer>
+        <div class="container">
+            <p>&copy; 2024 yueAkedo. All rights reserved.</p>
+        </div>
+    </footer>
+</div>
 
 <!-- Include your JavaScript files -->
 <script src="js/parallax.js"></script>
@@ -133,7 +153,14 @@
         type();
     }
 </script>
-
+<script>
+    // Simulate loading completion
+    setTimeout(() => {
+        // Hide the loader
+        document.querySelector('.loader-container').style.display = 'none';
+        // Show the main content
+        document.querySelector('.main-content').style.display = 'block';
+    }, 3000); // Adjust the time according to your needs
 </script>
 
 </body>
