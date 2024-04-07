@@ -4,18 +4,19 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>yueAkedo</title>
-    <link rel="stylesheet" href="css/deck/index.css"> 
+    <!-- Link to your CSS file -->
+    <link rel="stylesheet" href="css/deck/index.css">
+    <!-- Link to your favicon -->
     <link rel="icon" type="image/png" href="assets/tab.jpg">
     <style>
         /* Additional CSS for typing animation */
         #aboutText {
             overflow: hidden;
-            border-right: .15em solid orange; 
+            border-right: .15em solid rgb(248, 248, 248);
             white-space: nowrap;
             margin: 0 auto;
             letter-spacing: .15em;
-            animation: typing 3.5s steps(40, end), blink-caret .75s step-end infinite;
-            font-family: 'poppins';
+            font-family: 'Poppins', sans-serif; /* Change font family to Poppins */
         }
 
         /* Keyframes for typing and blinking caret */
@@ -26,7 +27,7 @@
 
         @keyframes blink-caret {
             from, to { border-color: transparent }
-            50% { border-color: orange }
+            50% { border-color: rgb(255, 255, 255) }
         }
     </style>
 </head>
@@ -36,71 +37,106 @@
 <header>
     <div class="container">
         <div class="logo">
-            <img src="assets/icon.jpg" alt="Your Logo"> 
+            <!-- Adjust the image path as per your directory structure -->
+            <img src="assets/icon.jpg" alt="Your Logo">
         </div>
         <nav>
             <ul>
-                <li><a href="./index">Home</a></li>
+                <li><a href="#hero">Home</a></li>
                 <li><a href="#about">About</a></li>
-                <li><a href="#portfolio">Portfolio</a></li>
+                <li><a href="#expertise">Expertise</a></li>
+                <li><a href="">Portfolio</a></li>
             </ul>
         </nav>
     </div>
 </header>
 
-
 <!-- Hero Section -->
 <section id="hero" class="parallax">
     <div class="container">
         <h2>Welcome to My Website</h2>
-        <a href="sources/./login" class="btn">CONTACT</a>
+        <a href="sources/login.html" class="btn">CONTACT</a> <!-- Assuming sources/login.html is your contact page -->
     </div>
 </section>
-
-
 
 <!-- About Section -->
 <section id="about" class="parallax">
     <div class="container">
         <h2>About Me</h2>
-        <p id="aboutText"><span id="response"></span></p> 
+        <p id="aboutText"><span id="response"></span></p>
     </div>
 </section>
-
-
 
 <!-- Portfolio Section -->
-<section id="portfolio" class="parallax">
+<section id="expertise" class="parallax">
     <div class="container">
-        <h2>Our Portfolio</h2>
-        <p>Take a look at our latest projects.</p>
+        <h2>Knowledge & Preference</h2>
+        <p>
+            <img width="48" height="48" src="https://img.icons8.com/color/48/mongodb.png" alt="mongodb"/>
+            <img width="48" height="48" src="https://img.icons8.com/external-dygo-kerismaker/48/external-SQL-networking-dygo-kerismaker.png" alt="external-SQL-networking-dygo-kerismaker"/>
+            <img width="48" height="48" src="https://img.icons8.com/color/48/c-programming.png" alt="c-programming"/>
+            <img width="48" height="48" src="https://img.icons8.com/color/48/c-plus-plus-logo.png" alt="c-plus-plus-logo"/>
+            <img width="48" height="48" src="https://img.icons8.com/3d-fluency/94/python.png" alt="python"/>
+            <img width="48" height="48" src="https://img.icons8.com/ios/50/php-logo.png" alt="php-logo"/>
+            <img width="48" height="48" src="https://img.icons8.com/color/48/html-5--v1.png" alt="html-5--v1"/>
+            <img width="48" height="48" src="https://img.icons8.com/stickers/100/css3.png" alt="css3"/>
+            <img width="48" height="48" src="https://img.icons8.com/color/48/javascript--v1.png" alt="javascript--v1"/>
+            <img width="48" height="48" src="https://img.icons8.com/external-tal-revivo-bold-tal-revivo/48/external-react-a-javascript-library-for-building-user-interfaces-logo-bold-tal-revivo.png" alt="external-react-a-javascript-library-for-building-user-interfaces-logo-bold-tal-revivo"/>
+        </p>
     </div>
 </section>
-
 
 
 <!-- Footer Section -->
 <footer>
-    <div class="container" class="parallax">
+    <div class="container">
         <p>&copy; 2024 yueAkedo. All rights reserved.</p>
     </div>
 </footer>
 
-<script src="js/parallex.js"></script>
+<!-- Include your JavaScript files -->
+<script src="js/parallax.js"></script>
 <script>
     // JavaScript for typing effect
     const aboutText = "hello, I am yukiAkedo";
     let i = 0;
-    function typeWriter() {
-        if (i < aboutText.length) {
-            document.getElementById("response").innerHTML += aboutText.charAt(i);
-            i++;
-            setTimeout(typeWriter, 50); 
-        }
+
+    // Function to start typing animation when section is visible
+    function startTyping(entries) {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                typeWriter(); // Start typing animation
+            }
+        });
     }
-    window.onload = function() {
-        typeWriter(); 
-    };
+
+    // Intersection Observer to observe the section
+    const observer = new IntersectionObserver(startTyping, { threshold: 0.5 });
+    observer.observe(document.getElementById("aboutText"));
+
+    function typeWriter() {
+        // Reset typing animation
+        document.getElementById("aboutText").innerHTML = "";
+        i = 0;
+
+        // Start typing animation
+        function type() {
+            if (i < aboutText.length) {
+                document.getElementById("aboutText").innerHTML += aboutText.charAt(i);
+                i++;
+                setTimeout(type, 50);
+            } else {
+                // Hide the border and caret after typing is complete
+                document.getElementById("aboutText").style.borderRight = 'none';
+                document.getElementById("aboutText").style.animation = 'none';
+            }
+        }
+
+        type(); // Call the typing function
+    }
 </script>
+
+</script>
+
 </body>
 </html>
