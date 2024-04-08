@@ -207,3 +207,9 @@ footer {
         transform: translateY(0);
     }
 }
+.white-bar {
+    background-color: rgba(255, 255, 255, 0.5);
+    height: 5px; 
+    margin: 50px auto; 
+    width: 50%;
+}

@@ -17,33 +17,19 @@
             margin: 0 auto;
             font-family: 'Poppins', sans-serif; 
         }
-
-        @keyframes typing {
-            from { width: 0 }
-            to { width: 100% }
-        }
-
-        @keyframes blink-caret {
-            from, to { border-color: transparent }
-            50% { border-color: rgb(255, 255, 255) }
-        }
-
         .loader-container {
             display: flex;
             justify-content: center;
             align-items: center;
             height: 100vh;
         }
-
         .main-content {
             display: none;
         }
-
         .mobile-navbar-btn {
             display: flex;
             align-items: center;
         }
-
         .mobile-navbar-icon {
             margin-right: 10px;
             cursor: pointer;
@@ -54,7 +40,6 @@
 <div class="loader-container">
     <div class="lds-ellipsis"><div></div><div></div><div></div><div></div></div>
 </div>
-
 <div class="main-content">
     <header>
         <div class="container">
@@ -69,13 +54,13 @@
                     <li><a href="">Portfolio</a></li>
                 </ul>
                 <div class="mobile-navbar-btn">
-                    <ion-icon name="menu-outline" class="mobile-navbar-icon"></ion-icon>
-                    <ion-icon name="close-outline" class="mobile-navbar-icon"></ion-icon>
+                    <ion-icon name="menu-outline" class="mobile-navbar-icon menu-icon"></ion-icon>
+                    <ion-icon name="close-outline" class="mobile-navbar-icon close-icon"></ion-icon>
                 </div>
+                             
             </nav>
         </div>
     </header>
-
     <section id="hero" class="parallax">
         <div class="container">
             <h2>Welcome to My Website</h2>
@@ -84,14 +69,13 @@
             <img src="assets/vegeta.png" alt="vegeta posing" class="left-image animate-image">
         </div>
     </section>
-
     <section id="about" class="parallax">
         <div class="container">
             <h2>About Me</h2>
             <p id="aboutText"><span id="response"></span></p>
         </div>
     </section>
-
+    <div class="white-bar parallax"></div>
     <section id="expertise" class="parallax">
         <div class="container">
             <h2>Knowledge & Preference</h2>
@@ -109,18 +93,43 @@
             </p>
         </div>
     </section>
-
     <footer>
         <div class="container">
             <p>&copy; 2024 yueAkedo. All rights reserved.</p>
         </div>
     </footer>
 </div>
+<div class="drawer-menu">
+    <ul>
+        <li><a href="#hero">Home</a></li>
+        <li><a href="#about">About</a></li>
+        <li><a href="#expertise">Expertise</a></li>
+        <li><a href="">Portfolio</a></li>
+    </ul>
+</div>
+<script>
+    document.addEventListener("DOMContentLoaded", function () {
+        const menuIcon = document.querySelector(".menu-icon");
+        const closeIcon = document.querySelector(".close-icon");
+        const drawerMenu = document.querySelector(".drawer-menu");
+
+        menuIcon.addEventListener("click", function () {
+            drawerMenu.classList.toggle("open");
+            menuIcon.style.display = "none";
+            closeIcon.style.display = "block";
+        });
+
+        closeIcon.addEventListener("click", function () {
+            drawerMenu.classList.toggle("open");
+            closeIcon.style.display = "none";
+            menuIcon.style.display = "block";
+        });
+    });
+</script>
 
 <script src="js/parallax.js"></script>
 <script src="js/index.js"></script>
 <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
 <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
-
 </body>
 </html>

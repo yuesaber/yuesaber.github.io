@@ -70,3 +70,4 @@ setTimeout(() => {
     document.querySelector('.loader-container').style.display = 'none';
     document.querySelector('.main-content').style.display = 'block';
 }, 3000);
+
