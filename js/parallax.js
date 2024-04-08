@@ -1,4 +1,3 @@
-// JavaScript for Parallax Effect
 window.addEventListener('scroll', function() {
     const parallax = document.querySelector('.parallax');
     let scrollPosition = window.pageYOffset;
@@ -6,7 +5,6 @@ window.addEventListener('scroll', function() {
     parallax.style.backgroundPositionY = scrollPosition * 0.7 + 'px';
 });
 
-// JavaScript for smooth scrolling with parallax effect
 document.querySelectorAll('a[href^="#"]').forEach(anchor => {
     anchor.addEventListener('click', function (e) {
         e.preventDefault();
@@ -30,9 +28,45 @@ document.querySelectorAll('a[href^="#"]').forEach(anchor => {
 });
 
 function easeInOutCubic(t, b, c, d) {
-    // cubic easing in/out - acceleration until halfway, then deceleration
     t /= d / 2;
     if (t < 1) return c / 2 * t * t * t + b;
     t -= 2;
     return c / 2 * (t * t * t + 2) + b;
 }
+
+const aboutText = "Hello, I am yukiAkedo, nice to meet you ..";
+let i = 0;
+
+function startTyping(entries) {
+    entries.forEach(entry => {
+        if (entry.isIntersecting) {
+            typeWriter();
+        }
+    });
+}
+
+const observer = new IntersectionObserver(startTyping, { threshold: 0.5 });
+observer.observe(document.getElementById("aboutText"));
+
+function typeWriter() {
+    document.getElementById("aboutText").innerHTML = "";
+    i = 0;
+
+    function type() {
+        if (i < aboutText.length) {
+            document.getElementById("aboutText").innerHTML += aboutText.charAt(i);
+            i++;
+            setTimeout(type, 50);
+        } else {
+            document.getElementById("aboutText").style.borderRight = 'none';
+            document.getElementById("aboutText").style.animation = 'none';
+        }
+    }
+
+    type();
+}
+
+setTimeout(() => {
+    document.querySelector('.loader-container').style.display = 'none';
+    document.querySelector('.main-content').style.display = 'block';
+}, 3000);

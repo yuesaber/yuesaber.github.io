@@ -1,19 +1,16 @@
-/* Import Google Font Poppins */
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap');
 
-/* Apply Poppins font to all elements */
 body, header, nav, section, footer {
     font-family: 'Poppins', sans-serif;
 }
 
-/* Basic Styles */
 body {
     font-family: Arial, sans-serif;
     margin: 0;
     padding: 0;
     background: linear-gradient(to right, #241A11, #382E20, #4F4130); 
 }
-/* Logo Styles */
+
 .logo img {
     border-radius: 50%; 
     width: 150px; 
@@ -26,7 +23,6 @@ body {
     padding: 20px;
 }
 
-/* Header Styles */
 header {
     background: linear-gradient(to right, #241A11, #382E20, #4F4130); 
     padding: 10px 0;
@@ -47,7 +43,6 @@ header nav ul li a {
     text-decoration: none;
 }
 
-/* Navigation Styles */
 nav {
     position: absolute; 
     top: 50%; 
@@ -70,7 +65,7 @@ nav ul li {
 nav ul li a {
     color: #fff;
     text-decoration: none;
-    font-size: 25px; /* Make the font size bigger */
+    font-size: 25px;
     transition: transform 0.3s, color 0.3s, font-size 0.3s cubic-bezier(0.25, 0.46, 0.45, 0.94);
 }
 
@@ -80,12 +75,10 @@ nav ul li:hover a {
     font-size: xx-large; 
 }
 
-
 nav ul li:hover ~ li {
     transform: translateX(100px);
 }
 
-/* Hero Section Styles */
 #hero {
     background: url('../../assets/background.png') center/cover no-repeat; 
     color: #fff;
@@ -104,7 +97,7 @@ nav ul li:hover ~ li {
  .right-image {
     position: absolute;
     top: 50%;
-    right: -100px; /* Initially position it outside the section */
+    right: -100px;
     transform: translateY(-50%);
 }
 
@@ -114,17 +107,17 @@ nav ul li:hover ~ li {
 
 @keyframes slideIn {
     from {
-        right: -100px; /* Initial position outside the section */
+        right: -100px;
     }
     to {
-        right: 20px; /* Final position */
+        right: 20px;
     }
 }
 
 .left-image {
     position: absolute;
     top: 100%;
-    left: -100px; /* Initially position it outside the section */
+    left: -100px;
     transform: translateY(-50%);
 }
 
@@ -134,14 +127,12 @@ nav ul li:hover ~ li {
 
 @keyframes slideInLeft {
     from {
-        left: -100px; /* Initial position outside the section */
+        left: -100px;
     }
     to {
-        left: 20px; /* Final position */
+        left: 20px;
     }
 }
-
-
 
 .parallax {
     background-attachment: fixed; 
@@ -153,8 +144,6 @@ nav ul li:hover ~ li {
     position: relative;
 }
 
-
-/* Button Styles */
 .btn {
     display: inline-block;
     background: #ff0000;
@@ -168,7 +157,6 @@ nav ul li:hover ~ li {
     background: #ff8c66;
 }
 
-/* Sections */
 section {
     padding: 100px 0;
     text-align: center;
@@ -192,7 +180,6 @@ section {
     font-size: x-large;
 }
 
-/* Footer Styles */
 footer {
     background: linear-gradient(to right, #241A11, #382E20, #4F4130); 
     color: #fff; 
@@ -200,9 +187,6 @@ footer {
     text-align: center;
 }
 
-
-
-/* CSS for animation effect on expertise icons */
 .expertise-icons img {
     margin-right: 10px; 
     opacity: 0;
@@ -223,4 +207,3 @@ footer {
         transform: translateY(0);
     }
 }
-
