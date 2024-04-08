@@ -4,7 +4,7 @@ function animateExpertise(entries) {
         if (entry.isIntersecting) {
             const icons = document.querySelectorAll('.expertise-icons img');
             icons.forEach((icon, index) => {
-                icon.style.animationDelay = `${index * 0.1}s`; // Adjust the delay between icons
+                icon.style.animationDelay = `${index * 0.1}s`;
                 icon.classList.add('animate-icon');
             });
         } else {
@@ -17,7 +17,7 @@ function animateExpertise(entries) {
 }
 
 // Intersection Observer to observe the section
-const expertiseObserver = new IntersectionObserver(animateExpertise, { threshold: [0, 0.25, 0.5, 0.75, 1] }); // Trigger animation at various intersection ratios
+const expertiseObserver = new IntersectionObserver(animateExpertise, { threshold: [0, 0.25, 0.5, 0.75, 1] }); 
 expertiseObserver.observe(document.getElementById("expertise"));
 
 
@@ -33,7 +33,7 @@ const sectionObserver = new IntersectionObserver((entries) => {
             document.querySelector('.right-image').classList.remove('animate-image');
         }
     });
-}, { threshold: 0.5 }); // Adjust threshold as needed
+}, { threshold: 0.5 }); 
 
 // Observe the section
 sectionObserver.observe(document.getElementById('hero'));
@@ -50,7 +50,7 @@ const leftSectionObserver = new IntersectionObserver((entries) => {
             document.querySelector('.left-image').classList.remove('animate-left-image');
         }
     });
-}, { threshold: 0.5 }); // Adjust threshold as needed
+}, { threshold: 0.5 }); 
 
 // Observe the section
 leftSectionObserver.observe(document.getElementById('hero'));

@@ -126,7 +126,7 @@
     function startTyping(entries) {
         entries.forEach(entry => {
             if (entry.isIntersecting) {
-                typeWriter(); // Start typing animation
+                typeWriter();
             }
         });
     }
@@ -163,7 +163,7 @@
         document.querySelector('.loader-container').style.display = 'none';
         // Show the main content
         document.querySelector('.main-content').style.display = 'block';
-    }, 3000); // Adjust the time according to your needs
+    }, 3000);
 </script>
 
 </body>

@@ -15,7 +15,7 @@ document.querySelectorAll('a[href^="#"]').forEach(anchor => {
         const targetPosition = target.getBoundingClientRect().top;
         const startPosition = window.pageYOffset;
         const distance = targetPosition - startPosition;
-        const duration = 1000; // Adjust the duration of the scrolling animation (in milliseconds)
+        const duration = 1000;
 
         let start = null;
         requestAnimationFrame(step);
